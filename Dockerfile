@@ -1,5 +1,4 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk update && apk add g++ make zlib-dev openssl-dev wget git pcre-dev asciidoc xmlto
-RUN git clone https://github.com/shadowsocks/shadowsocks-libev.git;cd shadowsocks-libev;./configure && make;make install
-
+RUN apt-get update && apt-get install nginx python3-pip letsencrypt git vim
+RUN pip3 install uwsgi flask requests
